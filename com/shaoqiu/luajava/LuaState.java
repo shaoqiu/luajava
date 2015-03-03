@@ -27,4 +27,9 @@ public class LuaState {
         mLuaStatePtr = _luaL_newstate();
         _luaL_openlibs(mLuaStatePtr);
     }
+
+    public static void main(String[] args) {
+        System.out.println("luajava test");
+        new LuaState().doFile("/home/shaoqiu/hello.lua");
+    }
 }
