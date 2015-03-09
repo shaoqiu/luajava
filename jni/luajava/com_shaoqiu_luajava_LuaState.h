@@ -9,6 +9,798 @@ extern "C" {
 #endif
 /*
  * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_absindex
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1absindex
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_arith
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1arith
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_call
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1call
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_checkstack
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1checkstack
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_close
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1close
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_compare
+ * Signature: (JIII)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1compare
+  (JNIEnv *, jobject, jlong, jint, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_concat
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1concat
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_copy
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1copy
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_createtable
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1createtable
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_error
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1error
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_gc
+ * Signature: (JII)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1gc
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_getfield
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1getfield
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_getglobal
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1getglobal
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_getmetatable
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1getmetatable
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_gettable
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1gettable
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_gettop
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1gettop
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_getupvalue
+ * Signature: (JII)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1getupvalue
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_getuservalue
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1getuservalue
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_insert
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1insert
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isboolean
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isboolean
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_iscfunction
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1iscfunction
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isfunction
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isfunction
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isinteger
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isinteger
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_islightuserdata
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1islightuserdata
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isnil
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isnil
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isnone
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isnone
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isnoneornil
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isnoneornil
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isnumber
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isnumber
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isstring
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isstring
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_istable
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1istable
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isthread
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isthread
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isuserdata
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isuserdata
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_isyieldable
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1isyieldable
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_len
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1len
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_newtable
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1newtable
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_next
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1next
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pcall
+ * Signature: (JIII)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pcall
+  (JNIEnv *, jobject, jlong, jint, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pop
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pop
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushboolean
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushboolean
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushstring
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushstring
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushglobaltable
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushglobaltable
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushinteger
+ * Signature: (JJ)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushinteger
+  (JNIEnv *, jobject, jlong, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushliteral
+ * Signature: (JLjava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushliteral
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushlstring
+ * Signature: (JLjava/lang/String;J)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushlstring
+  (JNIEnv *, jobject, jlong, jstring, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushnil
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushnil
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushfloat
+ * Signature: (JF)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushfloat
+  (JNIEnv *, jobject, jlong, jfloat);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushthread
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushthread
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_pushvalue
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1pushvalue
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_rawequal
+ * Signature: (JII)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1rawequal
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_rawget
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1rawget
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_rawlen
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1rawlen
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_rawset
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1rawset
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_remove
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1remove
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_replace
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1replace
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_resume
+ * Signature: (JJI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1resume
+  (JNIEnv *, jobject, jlong, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_rotate
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1rotate
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_setfield
+ * Signature: (JILjava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1setfield
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_setglobal
+ * Signature: (JLjava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1setglobal
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_setmetatable
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1setmetatable
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_settable
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1settable
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_settop
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1settop
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_setuservalue
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1setuservalue
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_staus
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1staus
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_stringtonumber
+ * Signature: (JLjava/lang/String;)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1stringtonumber
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_toboolean
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1toboolean
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_tointeger
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1tointeger
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_todouble
+ * Signature: (JI)D
+ */
+JNIEXPORT jdouble JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1todouble
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_topointer
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1topointer
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_tostring
+ * Signature: (JI)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1tostring
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_type
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1type
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_typename
+ * Signature: (JI)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1typename
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_xmove
+ * Signature: (JJI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1xmove
+  (JNIEnv *, jobject, jlong, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _lua_yield
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1yield
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_argcheck
+ * Signature: (JIILjava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argcheck
+  (JNIEnv *, jobject, jlong, jint, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_argerror
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argerror
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_callmeta
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1callmeta
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checkany
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkany
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checkinteger
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkinteger
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checknumber
+ * Signature: (JI)D
+ */
+JNIEXPORT jdouble JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checknumber
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checkstack
+ * Signature: (JILjava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkstack
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checkstring
+ * Signature: (JI)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkstring
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checktype
+ * Signature: (JII)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checktype
+  (JNIEnv *, jobject, jlong, jint, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_checkversion
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkversion
+  (JNIEnv *, jobject, jlong);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_dofile
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dofile
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_dostring
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dostring
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_error
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1error
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_execresult
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1execresult
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_fileresult
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1fileresult
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_getmetafield
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetafield
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_getmetatable
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetatable
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_getsubtable
+ * Signature: (JILjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getsubtable
+  (JNIEnv *, jobject, jlong, jint, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_gsub
+ * Signature: (JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1gsub
+  (JNIEnv *, jobject, jlong, jstring, jstring, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_len
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1len
+  (JNIEnv *, jobject, jlong, jint);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_loadbuffer
+ * Signature: (JLjava/lang/String;JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbuffer
+  (JNIEnv *, jobject, jlong, jstring, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_loadbufferx
+ * Signature: (JLjava/lang/String;JLjava/lang/String;Ljava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbufferx
+  (JNIEnv *, jobject, jlong, jstring, jlong, jstring, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_loadfile
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfile
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_loadfilex
+ * Signature: (JLjava/lang/String;Ljava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfilex
+  (JNIEnv *, jobject, jlong, jstring, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_loadstring
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadstring
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
+ * Method:    _luaL_newmetatable
+ * Signature: (JLjava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1newmetatable
+  (JNIEnv *, jobject, jlong, jstring);
+
+/*
+ * Class:     com_shaoqiu_luajava_LuaState
  * Method:    _luaL_newstate
  * Signature: ()J
  */
@@ -25,27 +817,19 @@ JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1openlibs
 
 /*
  * Class:     com_shaoqiu_luajava_LuaState
- * Method:    _luaL_dofile
- * Signature: (JLjava/lang/String;)I
+ * Method:    _luaL_setmetatable
+ * Signature: (JLjava/lang/String;)V
  */
-JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dofile
+JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1setmetatable
   (JNIEnv *, jobject, jlong, jstring);
 
 /*
  * Class:     com_shaoqiu_luajava_LuaState
- * Method:    _get_global_integer
- * Signature: (JLjava/lang/String;)I
+ * Method:    _luaL_typename
+ * Signature: (JI)Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1get_1global_1integer
-  (JNIEnv *, jobject, jlong, jstring);
-
-/*
- * Class:     com_shaoqiu_luajava_LuaState
- * Method:    _get_global_string
- * Signature: (JLjava/lang/String;)Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1get_1global_1string
-  (JNIEnv *, jobject, jlong, jstring);
+JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1typename
+  (JNIEnv *, jobject, jlong, jint);
 
 #ifdef __cplusplus
 }
