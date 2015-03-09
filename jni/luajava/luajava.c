@@ -785,7 +785,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1staus
 JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1stringtonumber
   (JNIEnv *env, jobject obj, jlong ptr, jstring str)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, str);
+    const char *cstr = (*env)->GetStringUTFChars(env, str, NULL);
     long ret = lua_stringtonumber((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, str, cstr);
     return ret;
@@ -900,7 +900,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1lua_1yield
 JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argcheck
   (JNIEnv *env, jobject obj, jlong ptr, jint cond, jint arg, jstring extramsg)
 {
-    const char *cmsg = (*env)->GetStringUTFChars(env, extramsg);
+    const char *cmsg = (*env)->GetStringUTFChars(env, extramsg, NULL);
     luaL_argcheck((lua_State*)ptr, cond, arg, cmsg);
     (*env)->ReleaseStringUTFChars(env, extramsg, cmsg);
 }
@@ -913,7 +913,7 @@ JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argcheck
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argerror
   (JNIEnv *env, jobject obj, jlong ptr, jint arg, jstring extramsg)
 {
-    const char *cmsg = (*env)->GetStringUTFChars(env, extramsg);
+    const char *cmsg = (*env)->GetStringUTFChars(env, extramsg, NULL);
     int ret = luaL_argerror((lua_State*)ptr, arg, cmsg);
     (*env)->ReleaseStringUTFChars(env, extramsg, cmsg);
     return ret; 
@@ -927,7 +927,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1argerror
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1callmeta
   (JNIEnv *env, jobject obj, jlong ptr, jint obj, jstring e)
 {
-    const char * element = (*env)->GetStringUTFChars(env, e);
+    const char * element = (*env)->GetStringUTFChars(env, e, NULL);
     int ret = luaL_callmeta((lua_State*)ptr, obj, element);
     (*env)->ReleaseStringUTFChars(env, e, element);
     return ret;
@@ -974,7 +974,7 @@ JNIEXPORT jdouble JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checknumber
 JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkstack
   (JNIEnv *env, jobject obj, jlong ptr, jint sz, jstring msg)
 {
-    const char *cmsg = (*env)->GetStringUTFChars(env, msg);
+    const char *cmsg = (*env)->GetStringUTFChars(env, msg, NULL);
     luaL_checkstack((lua_State*)ptr, sz, cmsg);
     (*env)->ReleaseStringUTFChars(env, msg, cmsg);
 }
@@ -1021,7 +1021,7 @@ JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1checkversion
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dofile
   (JNIEnv *env, jobject obj, jlong ptr, jstring filename)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, filename);
+    const char *cstr = (*env)->GetStringUTFChars(env, filename, NULL);
     int ret = luaL_dofile((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, filename, cstr);
     return ret;
@@ -1035,7 +1035,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dofile
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dostring
   (JNIEnv *env, jobject obj, jlong ptr, jstring str)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, str);
+    const char *cstr = (*env)->GetStringUTFChars(env, str, NULL);
     int ret = luaL_dostring((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, str, cstr);
     return ret;
@@ -1049,7 +1049,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1dostring
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1error
   (JNIEnv *env, jobject obj, jlong ptr, jstring str)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, str);
+    const char *cstr = (*env)->GetStringUTFChars(env, str, NULL);
     int ret = luaL_error((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, str, cstr);
     return ret;
@@ -1074,7 +1074,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1execresult
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1fileresult
   (JNIEnv *env, jobject obj, jlong ptr, jint stat, jstring fname)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, fname);
+    const char *cstr = (*env)->GetStringUTFChars(env, fname, NULL);
     int ret = luaL_fileresult((lua_State*)ptr, stat, cstr);
     (*env)->ReleaseStringUTFChars(env, fname, cstr);
     return ret;
@@ -1088,7 +1088,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1fileresult
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetafield
   (JNIEnv *env, jobject obj, jlong ptr, jint obj, jstring e)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, e);
+    const char *cstr = (*env)->GetStringUTFChars(env, e, NULL);
     int ret = luaL_getmetafield((lua_State*)ptr, obj, cstr);
     (*env)->ReleaseStringUTFChars(env, e, cstr);
     return ret;
@@ -1102,7 +1102,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetafield
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetatable
   (JNIEnv *env, jobject obj, jlong ptr, jstring tname)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, tname);
+    const char *cstr = (*env)->GetStringUTFChars(env, tname, NULL);
     int ret = luaL_getmetatable((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, tname, cstr);
     return ret;
@@ -1116,7 +1116,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getmetatable
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getsubtable
   (JNIEnv *env, jobject obj, jlong ptr, jint index, jstring fname)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, fname);
+    const char *cstr = (*env)->GetStringUTFChars(env, fname, NULL);
     int ret = luaL_getsubtable((lua_State*)ptr, index, cstr);
     (*env)->ReleaseStringUTFChars(env, fname, cstr);
     return ret;
@@ -1130,9 +1130,9 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1getsubtable
 JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1gsub
   (JNIEnv *env, jobject obj, jlong ptr, jstring s, jstring p, jstring r)
 {
-    const char *cs = (*env)->GetStringUTFChars(env, s);
-    const char *cp = (*env)->GetStringUTFChars(env, p);
-    const char *cr = (*env)->GetStringUTFChars(env, r);
+    const char *cs = (*env)->GetStringUTFChars(env, s, NULL);
+    const char *cp = (*env)->GetStringUTFChars(env, p, NULL);
+    const char *cr = (*env)->GetStringUTFChars(env, r, NULL);
     const char *ret = luaL_gsub((lua_State*)ptr, cs, cp, cr);
     (*env)->ReleaseStringUTFChars(env, s, cs);
     (*env)->ReleaseStringUTFChars(env, p, cp);
@@ -1159,8 +1159,8 @@ JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1len
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbuffer
   (JNIEnv *env, jobject obj, jlong ptr, jstring buff, jlong sz, jstring name)
 {
-    const char *cbuff = (*env)->GetStringUTFChars(env, buff);
-    const char *cname = (*env)->GetStringUTFChars(env, name);
+    const char *cbuff = (*env)->GetStringUTFChars(env, buff, NULL);
+    const char *cname = (*env)->GetStringUTFChars(env, name, NULL);
     int ret = luaL_loadbuffer((lua_State*)ptr, cbuff, sz, cname);
     (*env)->ReleaseStringUTFChars(env, buff, cbuff);
     (*env)->ReleaseStringUTFChars(env, name, cname);
@@ -1175,9 +1175,9 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbuffer
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbufferx
   (JNIEnv *env, jobject obj, jlong ptr, jstring buff, jlong sz, jstring name, jstring mode)
 {
-    const char *cbuff = (*env)->GetStringUTFChars(env, buff);
-    const char *cname = (*env)->GetStringUTFChars(env, name);
-    const char *cmode = (*env)->GetStringUTFChars(env, mode);
+    const char *cbuff = (*env)->GetStringUTFChars(env, buff, NULL);
+    const char *cname = (*env)->GetStringUTFChars(env, name, NULL);
+    const char *cmode = (*env)->GetStringUTFChars(env, mode, NULL);
     int ret = luaL_loadbufferx((lua_State*)ptr, cbuff, sz, cname, cmode);
     (*env)->ReleaseStringUTFChars(env, buff, cbuff);
     (*env)->ReleaseStringUTFChars(env, name, cname);
@@ -1193,7 +1193,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadbufferx
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfile
   (JNIEnv *env, jobject obj, jlong ptr, jstring filename)
 {
-    const char *cfilename = (*env)->GetStringUTFChars(env, filename);
+    const char *cfilename = (*env)->GetStringUTFChars(env, filename, NULL);
     int ret = luaL_loadfile((lua_State*)ptr, cfilename);
     (*env)->ReleaseStringUTFChars(env, filename, cfilename);
     return ret;
@@ -1207,8 +1207,8 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfile
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfilex
   (JNIEnv *env, jobject obj, jlong ptr, jstring filename, jstring mode)
 {
-    const char *cfilename = (*env)->GetStringUTFChars(env, filename);
-    const char *cmode = (*env)->GetStringUTFChars(env, mode);
+    const char *cfilename = (*env)->GetStringUTFChars(env, filename, NULL);
+    const char *cmode = (*env)->GetStringUTFChars(env, mode, NULL);
     int ret = luaL_loadfilex((lua_State*)ptr, cfilename, cmode);
     (*env)->ReleaseStringUTFChars(env, filename, cfilename);
     (*env)->ReleaseStringUTFChars(env, mode, cmode);
@@ -1223,7 +1223,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadfilex
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadstring
   (JNIEnv *env, jobject obj, jlong ptr, jstring str)
 {
-    const char *cstr = (*env)->GetStringUTFChars(env, str);
+    const char *cstr = (*env)->GetStringUTFChars(env, str, NULL);
     int ret = luaL_loadstring((lua_State*)ptr, cstr);
     (*env)->ReleaseStringUTFChars(env, str, cstr);
     return ret;
@@ -1237,7 +1237,7 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1loadstring
 JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1newmetatable
   (JNIEnv *env, jobject obj, jlong ptr, jstring tname)
 {
-    const char *ctname = (*env)->GetStringUTFChars(env, tname);
+    const char *ctname = (*env)->GetStringUTFChars(env, tname, NULL);
     int ret = luaL_newmetatable((lua_State*)ptr, ctname);
     (*env)->ReleaseStringUTFChars(env, tname, ctname);
     return ret;
@@ -1249,7 +1249,10 @@ JNIEXPORT jint JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1newmetatable
  * Signature: ()J
  */
 JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1newstate
-  (JNIEnv *, jobject);
+  (JNIEnv *env, jobject obj)
+{
+    return luaL_newstate();
+}
 
 /*
  * Class:     com_shaoqiu_luajava_LuaState
@@ -1257,7 +1260,10 @@ JNIEXPORT jlong JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1newstate
  * Signature: (J)V
  */
 JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1openlibs
-  (JNIEnv *, jobject, jlong);
+  (JNIEnv *env, jobject obj, jlong ptr)
+{
+    luaL_openlibs((lua_State*)ptr);
+}
 
 /*
  * Class:     com_shaoqiu_luajava_LuaState
@@ -1265,7 +1271,12 @@ JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1openlibs
  * Signature: (JLjava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1setmetatable
-  (JNIEnv *, jobject, jlong, jstring);
+  (JNIEnv *env, jobject obj, jlong ptr, jstring tname)
+{
+    const char *ctname = (*env)->GetStringUTFChars(env, tname, NULL);
+    luaL_setmetatable((lua_State*)ptr, ctname);
+    (*env)->ReleaseStringUTFChars(env, tname, ctname);
+}
 
 /*
  * Class:     com_shaoqiu_luajava_LuaState
@@ -1273,4 +1284,8 @@ JNIEXPORT void JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1setmetatable
  * Signature: (JI)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_com_shaoqiu_luajava_LuaState__1luaL_1typename
-  (JNIEnv *, jobject, jlong, jint);
+  (JNIEnv *env, jobject obj, jlong ptr, jint index)
+{
+    const char *ret = luaL_typename((lua_State*)ptr, index);
+    return (*env)->NewStringUTF(env, ret);
+}

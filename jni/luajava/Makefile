@@ -1,4 +1,4 @@
-CFLAGS	= -fPIC -I/opt/jdk1.6.0_37/include -I/opt/jdk1.6.0_37/include/linux
+CFLAGS	= -fPIC -I/usr/lib/jvm/java-7-openjdk-amd64/include -I/usr/lib/jvm/java-7-openjdk-amd64/include/linux
 objects := lapi.o lauxlib.o lbaselib.o lbitlib.o lcode.o lcorolib.o lctype.o ldblib.o ldebug.o ldo.o ldump.o lfunc.o lgc.o linit.o liolib.o llex.o lmathlib.o lmem.o loadlib.o lobject.o lopcodes.o loslib.o lparser.o lstate.o lstring.o lstrlib.o ltable.o ltablib.o ltm.o luajava.o lundump.o lutf8lib.o lvm.o lzio.o
 libluajava : $(objects)
 	gcc -shared -Wl,-soname,libluajava.so.1 -o libluajava.so lapi.o lauxlib.o lbaselib.o lbitlib.o lcode.o lcorolib.o lctype.o ldblib.o ldebug.o ldo.o ldump.o lfunc.o lgc.o linit.o liolib.o llex.o lmathlib.o lmem.o loadlib.o lobject.o lopcodes.o loslib.o lparser.o lstate.o lstring.o lstrlib.o ltable.o ltablib.o ltm.o luajava.o lundump.o lutf8lib.o lvm.o lzio.o
