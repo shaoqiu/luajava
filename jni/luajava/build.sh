@@ -15,7 +15,7 @@ gcc -MM *.c >> Makefile
 {
 cat <<EOF
 clean:
-	rm -rf ${objects}
+	rm -rf ${objects} libluajava.so
 
 install:
 	cp -f libluajava.so ../../libs/
